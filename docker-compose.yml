@@ -1,0 +1,52 @@
+version: '3.8'
+services:
+    # Mailpit: Mail server with a web interface for email management
+    # Documentation: https://github.com/axllent/mailpit
+    mailpit:
+        image: 'axllent/mailpit:${MAILPIT_IMAGE_VERSION}'
+        container_name: mailpit
+        restart: unless-stopped
+        ports:
+            - '${MAILPIT_PORT}:1025' # SMTP port
+            - '${MAILPIT_WEB_PORT}:8025' # Web interface port
+
+    # CloudBeaver: Web-based database administration tool
+    # Documentation: https://github.com/dbeaver/cloudbeaver/wiki/Run-Docker-Container
+    cloudbeaver:
+        image: 'dbeaver/cloudbeaver:${CLOUDBEAVER_IMAGE_VERSION}'
+        container_name: 'cloudbeaver'
+        restart: always
+        ports:
+            - '8978:8978' # Web interface port
+        volumes:
+            - cloudbeaver_data:/opt/cloudbeaver/workspace
+        network_mode: 'host'
+
+    # Portainer: Docker container management tool
+    # Documentation: https://docs.portainer.io/start/install-ce/server/docker/linux
+    portainer:
+        image: 'portainer/portainer-ce:${PORTAINER_IMAGE_VERSION}'
+        ports:
+            - '${PORTAINER_PORT}:9443' # HTTPS port
+            - '${PORTAINER_WEB_PORT}:9000' # Web interface port
+        volumes:
+            - portainer_data:/data
+            - /var/run/docker.sock:/var/run/docker.sock
+        restart: unless-stopped
+
+    # RedisInsight: GUI for managing and monitoring Redis databases
+    # Documentation: https://docs.redis.com/latest/ri/installing/install-docker/
+    redisinsight:
+        image: redislabs/redisinsight:${REDISINSIGHT_VERSION}
+        container_name: redisinsight
+        restart: unless-stopped
+        ports:
+            - '8001:8001' # Web interface port
+        volumes:
+            - redisinsight_data:/db
+        network_mode: 'host'
+
+volumes:
+    cloudbeaver_data:
+    portainer_data:
+    redisinsight_data:
