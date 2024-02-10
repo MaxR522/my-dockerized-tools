@@ -1,6 +1,6 @@
 # Dockerized Tools
 
-This project provides a Docker Compose setup for several useful tools, allowing for easy deployment and management of various services in containerized environments.
+This project provides a Docker Compose setup for several useful tools.
 
 ## How to Use
 
