@@ -7,8 +7,18 @@ This project provides a Docker Compose setup for several useful tools.
 1. Make sure you have Docker and Docker Compose installed on your system. [Docker installation](https://docs.docker.com/engine/install/)
 2. Clone this repository.
 3. Customize the environment variables in the `.env` file, if needed.
-4. Run `docker-compose up -d` to start all services in the background.
-   - To start a specific service, use `docker-compose up -d service_name` (e.g., `docker-compose up -d cloudbeaver`).
+4. make the script executable by changing the access permission of ./my-tools.sh `chmod 754 ./my-tools.sh`
+4. Run a tool:
+```
+  # Start the portainer service (example)
+  ./docker-service.sh start portainer
+```
+
+5. Stop a tool: 
+```
+  # Stop the portainer service (example)
+  ./docker-service.sh stop portainer
+```
 
 ## Included Services
 
