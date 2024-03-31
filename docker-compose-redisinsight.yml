@@ -1,0 +1,13 @@
+services:
+    redisinsight:
+        image: redislabs/redisinsight:${REDISINSIGHT_VERSION}
+        container_name: redisinsight
+        restart: unless-stopped
+        ports:
+            - '8001:8001' # Web interface port
+        volumes:
+            - redisinsight_data:/db
+        network_mode: 'host'
+
+volumes:
+    redisinsight_data:

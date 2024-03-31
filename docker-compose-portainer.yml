@@ -1,0 +1,13 @@
+services:
+    portainer:
+        image: 'portainer/portainer-ce:${PORTAINER_IMAGE_VERSION}'
+        ports:
+            - '${PORTAINER_PORT}:9443' # HTTPS port
+            - '${PORTAINER_WEB_PORT}:9000' # Web interface port
+        volumes:
+            - portainer_data:/data
+            - /var/run/docker.sock:/var/run/docker.sock
+        restart: unless-stopped
+
+volumes:
+    portainer_data:

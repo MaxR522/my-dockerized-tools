@@ -1,0 +1,8 @@
+services:
+    mailpit:
+        image: 'axllent/mailpit:${MAILPIT_IMAGE_VERSION}'
+        container_name: mailpit
+        restart: unless-stopped
+        ports:
+            - '${MAILPIT_PORT}:1025' # SMTP port
+            - '${MAILPIT_WEB_PORT}:8025' # Web interface port
