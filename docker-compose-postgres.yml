@@ -1,6 +1,6 @@
 services:
     postgres:
-        image: postgres:12-alpine
+        image: 'postgres:${POSTGRES_IMAGE_VERSION}'
         environment:
             POSTGRES_USER: '${POSTGRES_USER}'
             POSTGRES_PASSWORD: '${POSTGRES_PASSWORD}'
