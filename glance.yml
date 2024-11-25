@@ -1,6 +1,6 @@
 # Default glance configuration, feel free to modify it to your liking
 pages:
-  - name: Home
+  - name: Programming
     columns:
       - size: full
         widgets:
