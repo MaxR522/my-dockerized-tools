@@ -2,50 +2,91 @@
 pages:
   - name: Home
     columns:
-      - size: small
+      - size: full
         widgets:
-          - type: calendar
-
           - type: rss
-            limit: 10
-            collapse-after: 3
+            collapse-after: 10
             cache: 3h
             feeds:
-              - url: https://ciechanow.ski/atom.xml
-              - url: https://www.joshwcomeau.com/rss.xml
-                title: Josh Comeau
-              - url: https://samwho.dev/rss.xml
-              - url: https://awesomekling.github.io/feed.xml
-              - url: https://ishadeed.com/feed.xml
-                title: Ahmad Shadeed
+              - url: https://medium.com/feed/better-programming
+                title: Better Programming
+              - url: https://codeascraft.com/feed/atom/
+                title: Code as Craft
+              - url: https://blog.twitter.com/engineering/en_us/blog.rss
+                title: Twitter Engineering
+              - url: https://engineering.fb.com/feed/
+                title: Facebook Engineering
+              - url: https://medium.com/feed/hackernoon
+                title: Hacker Noon
+              - url: https://instagram-engineering.com/feed/
+                title: Instagram Engineering
+              - url: https://blog.jetbrains.com/feed
+                title: JetBrains Blog
+              - url: https://engineering.linkedin.com/blog.rss.html
+                title: LinkedIn Engineering
+              - url: https://netflixtechblog.com/feed
+                title: Netflix Tech Blog
+              - url: https://softwareengineeringdaily.com/category/podcast/feed
+                title: Software Engineering Daily
+              - url: https://www.thecrazyprogrammer.com/category/programming/feed
+                title: The Crazy Programmer
+              - url: https://slack.engineering/feed
+                title: Slack Engineering
+              - url: https://developers.soundcloud.com/blog/blog.rss
+                title: SoundCloud Developers
+              - url: https://labs.spotify.com/feed/
+                title: Spotify Labs
+              - url: https://stackoverflow.blog/feed/
+                title: Stack Overflow Blog
+              - url: https://medium.com/feed/airbnb-engineering
+                title: Airbnb Engineering
+              - url: https://github.blog/feed/
+                title: GitHub Blog
+              # - url: https://www.reddit.com/r/programming/.rss
+              #   title: r/programming
 
-          - type: twitch-channels
-            channels:
-              - theprimeagen
-              - cohhcarnage
-              - christitustech
-              - blurbs
-              - asmongold
-              - jembawls
+
 
       - size: full
         widgets:
-          - type: hacker-news
-
           - type: videos
+            style: vertical-cards
             channels:
-              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
-              - UCv6J_jJa8GJqFwQNgNrMuww # ServeTheHome
-              - UCOk-gHyjcWZNj3Br4oxwh0A # Techno Tim
+              - UCsBjURrPoezykLs9EqgamOA # Fireship
+              - UCUyeluBRhGPCW4rPe_UvBZQ # ThePrimeTime
+              - UCj_iGliGCkLcHSZ8eqVNPDQ # Grafikart
+              - UCLOAPb7ATQUs_nDs9ViLcMw # Benjamin code
+              - UCYnvxJ-PKiGXo_tYXpWAC-w # Micode
+              - UCZgt6AzoyjslHTC9dz0UoTw # ByteByteGo
+          - type: twitch-channels
+            channels:
+              - theprimeagen
+              - grafikart
+              - benjamincode
 
-          - type: reddit
-            subreddit: selfhosted
-
+  - name: Stock market
+    columns:
+      - size: full
+        style: horizontal-cards
+        widgets:
+          - type: rss
+            collapse-after: 10
+            title: News
+            feeds:
+              # - url: https://feeds.bloomberg.com/markets/news.rss
+              #   title: Bloomberg
+              - url: https://moxie.foxbusiness.com/google-publisher/markets.xml
+                title: Fox Business
+              - url: https://www.investing.com/rss/news.rss
+                title: Investing.com
+              - url: https://feeds.content.dowjones.io/public/rss/mw_topstories
+                title: MarketWatch
+              - url: https://www.cnbc.com/id/20409666/device/rss/rss.html?x=1
+                title: CNBC
+              - url: https://economictimes.indiatimes.com/rssfeedsdefault.cms
+                title: The Economic Times
       - size: small
         widgets:
-          - type: weather
-            location: London, United Kingdom
-
           - type: stocks
             stocks:
               - symbol: SPY
